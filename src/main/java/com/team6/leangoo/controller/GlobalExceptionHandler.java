@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created by AgZou on 2017/8/25.
- * 统一异常处理,解决shiro因为没有权限抛出UnauthorizedException的问题
+ * 统一异常处理,解决shiro因为没有权限抛出UnauthorizedException错误只能返回500页面的问题,返回原页面才符合逻辑,后续继续改进
  * 可以在里面跳转url,实现返回错误前页面
  */
 @ControllerAdvice

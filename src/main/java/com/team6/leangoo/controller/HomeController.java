@@ -18,7 +18,11 @@ import java.util.Map;
 @Controller
 public class HomeController {
 
-    @RequestMapping("/index")
+    /**
+     * ({"/","/index"})解决验证成功后不能跳转到首页的问题,大括号表示可以匹配多个连接
+     * @return
+     */
+    @RequestMapping({"/","/index"})
     public String index(){
         return "index";
 

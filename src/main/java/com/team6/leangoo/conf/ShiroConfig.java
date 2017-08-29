@@ -18,8 +18,9 @@ import java.util.Map;
  * Created by AgZou on 2017/8/24.
  * Shiro配置类,
  * 具体百度
+ * 把@Configuration注释掉的话,相对于把shiro验证框架去掉就可以进行正常的编码了.
  */
-@Configuration
+//@Configuration
 public class ShiroConfig {
     @Bean
     public ShiroFilterFactoryBean shiroFilter(SecurityManager securityManager) {
@@ -27,8 +28,12 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         Map<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
         Map<String,Filter> filter=new LinkedHashMap<>();
+        /**
+         * 注入自定义的过滤器filter.(作用:解决shiro框架:不注销前一个用户直接在登录页面登录新账号登录不成功问题)
+         */
         filter.put("myFilter",Filter());
         filterChainDefinitionMap.put("/**", "authc");
+        filterChainDefinitionMap.put("/favicon.ico","anon");
         filterChainDefinitionMap.put("/logout", "logout");
         shiroFilterFactoryBean.setLoginUrl("/login");
         shiroFilterFactoryBean.setSuccessUrl("/index");
