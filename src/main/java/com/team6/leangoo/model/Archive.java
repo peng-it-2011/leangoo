@@ -9,8 +9,11 @@ public class Archive {
 
     private Integer type;
 
-    @Column(name = "project_or_board_id")
-    private Integer projectOrBoardId;
+    @Column(name = "project_id")
+    private Integer projectId;
+
+    @Column(name = "board_id")
+    private Integer boardId;
 
     /**
      * @return archive_id
@@ -41,16 +44,30 @@ public class Archive {
     }
 
     /**
-     * @return project_or_board_id
+     * @return project_id
      */
-    public Integer getProjectOrBoardId() {
-        return projectOrBoardId;
+    public Integer getProjectId() {
+        return projectId;
     }
 
     /**
-     * @param projectOrBoardId
+     * @param projectId
      */
-    public void setProjectOrBoardId(Integer projectOrBoardId) {
-        this.projectOrBoardId = projectOrBoardId;
+    public void setProjectId(Integer projectId) {
+        this.projectId = projectId;
+    }
+
+    /**
+     * @return board_id
+     */
+    public Integer getBoardId() {
+        return boardId;
+    }
+
+    /**
+     * @param boardId
+     */
+    public void setBoardId(Integer boardId) {
+        this.boardId = boardId;
     }
 }

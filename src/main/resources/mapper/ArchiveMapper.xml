@@ -1,12 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.team6.leangoo.mapper.ArchiveMapper">
-  <resultMap id="BaseResultMap" type="com.team6.leangoo.model.Archive">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.team6.leangoo.mapper.ArchiveMapper" >
+  <resultMap id="BaseResultMap" type="com.team6.leangoo.model.Archive" >
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="archive_id" jdbcType="INTEGER" property="archiveId" />
-    <result column="type" jdbcType="INTEGER" property="type" />
-    <result column="project_or_board_id" jdbcType="INTEGER" property="projectOrBoardId" />
+    <id column="archive_id" property="archiveId" jdbcType="INTEGER" />
+    <result column="type" property="type" jdbcType="INTEGER" />
+    <result column="project_id" property="projectId" jdbcType="INTEGER" />
+    <result column="board_id" property="boardId" jdbcType="INTEGER" />
   </resultMap>
 </mapper>
